@@ -19,6 +19,11 @@ public class CamerBorders : MonoBehaviour
         corners[1] = handles[1] + new Vector3(width, height) / 2f;
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        camera = Camera.main;
+    }
+
     private void LateUpdate()
     {
         //Keep camera inside borders

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -6,6 +8,7 @@ public class LoadScene : MonoBehaviour
 {
     [SerializeField] string nextScene = "";
     BoxCollider2D box;
+    GameManager gm;
 
     //Basic script, loads next scene on collider touch. 
     //can be improved via adding some animation and translating hero data
@@ -15,6 +18,7 @@ public class LoadScene : MonoBehaviour
     {
         //Failsafe. Just in case we forget to set it as trigger
         box = GetComponent<BoxCollider2D>();
+        gm = FindObjectOfType<GameManager>();
         box.isTrigger = true;
 
         //set Z to 0
@@ -25,15 +29,10 @@ public class LoadScene : MonoBehaviour
     {
         if (collision.GetComponent<HeroController>() != null)
         {
-            //freeze input and keep it running. Also 
-            try
-            {
-                SceneManager.LoadScene(nextScene);
-            }
-            catch
-            {
-                print("Scene not found");
-            }
+            StartCoroutine(gm.LoadNextScene(nextScene));
         }
     }
+
+    
+    
 }

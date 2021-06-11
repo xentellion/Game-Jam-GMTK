@@ -32,7 +32,7 @@ public class HeroController : MonoBehaviour
     bool watchRight = true;
     bool isGrounded = false;
     bool isCeiled = false;
-    bool controlled = true;
+    internal bool controlled = true;
 
     void Awake()
     {
