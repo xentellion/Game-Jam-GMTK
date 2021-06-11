@@ -80,11 +80,7 @@ public class HeroController : MonoBehaviour
             Flip();
         }
 
-        //hand made gravity
-        if (controlled)
-        {
-            rb.velocity += new Vector2(0, -gravity);
-        }
+        rb.velocity += new Vector2(0, -gravity);
     }
 
     private void InputControls()

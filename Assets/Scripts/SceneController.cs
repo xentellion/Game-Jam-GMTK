@@ -6,16 +6,19 @@ public class SceneController : MonoBehaviour
 {
     public Vector2 StartingPoint;
     HeroController player;
-    // Start is called before the first frame update
-    void Start()
+    public List<GameObject> transitor = new List<GameObject>();
+
+    IEnumerator Start()
     {
+        foreach (GameObject go in transitor)
+            go.gameObject.SetActive(false);
+
         player = FindObjectOfType<HeroController>();
         player.transform.position = StartingPoint;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        print(player.controlled);
+        yield return new WaitForSeconds(1f);
+
+        foreach (GameObject go in transitor)
+            go.gameObject.SetActive(true);
     }
 }

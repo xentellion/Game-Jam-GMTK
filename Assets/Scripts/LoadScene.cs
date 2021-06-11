@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(BoxCollider2D))]
 public class LoadScene : MonoBehaviour
 {
-    [SerializeField] string nextScene = "";
+    public string nextScene = "";
     BoxCollider2D box;
     GameManager gm;
 

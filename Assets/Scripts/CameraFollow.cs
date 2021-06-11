@@ -11,12 +11,10 @@ public class CameraFollow : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    private void OnLevelWasLoaded(int level)
+    /*private void OnLevelWasLoaded(int level)
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        print(target.name);
-        print(target.position);
-    }
+    }*/
 
     private void FixedUpdate()
     {

@@ -35,7 +35,5 @@ public class LevelBorders : Editor
 
         Handles.DrawLine(new Vector3(ai.handles[0].x, ai.handles[1].y), ai.handles[1]);
         Handles.DrawLine(new Vector3(ai.handles[1].x, ai.handles[0].y), ai.handles[0]);
-
-        Handles.color = Color.blue;
     }
 }
