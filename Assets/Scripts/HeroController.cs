@@ -20,7 +20,6 @@ public class HeroController : MonoBehaviour
 
     [Header("Floor/ceiling checks")]
     [SerializeField] LayerMask groundLayer;
-    [SerializeField][Range(0,1)] float sensitivity = 0.5f;
     [Space(5)]
 
     [Header("Movement values")]
@@ -37,6 +36,12 @@ public class HeroController : MonoBehaviour
 
     void Awake()
     {
+        //Singletone
+        HeroController[] ghosts = FindObjectsOfType<HeroController>();
+        if (ghosts.Length > 1)
+            Destroy(gameObject);
+
+        //getting stuff
         box = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -45,6 +50,7 @@ public class HeroController : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         //custom gravity. We are cool
         rb.gravityScale = 0;
     }
@@ -100,10 +106,10 @@ public class HeroController : MonoBehaviour
     }
 
     //Define if it is standing according on box collider size
-    bool Grounded() => Physics2D.OverlapCircle(new Vector3(box.bounds.center.x, box.bounds.center.y - box.bounds.size.y * 0.5f), sensitivity, groundLayer);
+    bool Grounded() => Physics2D.OverlapCircle(new Vector3(box.bounds.center.x, box.bounds.center.y - box.bounds.size.y * 0.5f), box.bounds.size.x * 0.5f, groundLayer);
 
     //define if it is touching the ceiling
-    bool Ceiled() => Physics2D.OverlapCircle(new Vector3(box.bounds.center.x, box.bounds.center.y + box.bounds.size.y * 0.5f), sensitivity, groundLayer);
+    bool Ceiled() => Physics2D.OverlapCircle(new Vector3(box.bounds.center.x, box.bounds.center.y + box.bounds.size.y * 0.5f), box.bounds.size.x * 0.5f, groundLayer);
 
     //roughly flips object. Calls on animation
     void Flip()
