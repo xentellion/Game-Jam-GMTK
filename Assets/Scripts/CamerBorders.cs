@@ -5,7 +5,7 @@ public class CamerBorders : MonoBehaviour
     //hamdles to set up room borders
     [HideInInspector] public Vector3[] handles = new Vector3[2] { new Vector3(1,1), new Vector3(-1,-1)};
     //borders for camera
-    Vector3[] corners = new Vector3[2];
+    [HideInInspector] public Vector3[] corners = new Vector3[2];
     //camera
     Camera camera;
 

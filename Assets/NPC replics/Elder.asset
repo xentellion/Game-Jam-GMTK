@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401fc7bcb3826e94194122babb047c6e, type: 3}
+  m_Name: Elder
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialog
+  dialogs:
+  - ...hrmm?
+  - "Oh, why, hello there, bright one! Why, your timing couldn\u2019t be more impeccable!"
+  - I am met with a terrible problem, my friend. For you see, my dearest Grandchild,
+    sweet little Xy, he has fled the village and driven its people far apart!
+  - Truth be told, our village is rather distant as is- our homes sit lone and isolated
+    from one another. Few call one another friends or family, and the twisting caves
+    of this undergrowth make it far too dangerous to try.
+  - That is why I have devised a plan, to relocate everyone to the surface! Though
+    I must admit, in my frail old age, I cannot do it alone.
+  - And so I must call upon you, my friend! Travel on ahead, and speak to any of
+    the villagers you may find on the way! Tell them of this plan, and send them
+    to join us on the surface!
+  - Please, traveler... I wish to reunite with my darling Xy more than anything.
+    To live a happy life together on the surface is all I wish for.

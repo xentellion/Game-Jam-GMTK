@@ -18,11 +18,6 @@ public class LevelBorders : Editor
 
     private void OnSceneGUI()
     {
-        /*This thing is an indian magic. 
-         *With these two handles it creates it is possible to set up every borders
-         * for camera movenent to not overcome borders. Neat thing
-         */
-
         for (int i = 0; i < 2; i++) 
             ai.handles[i] = Handles.PositionHandle(ai.handles[i], Quaternion.identity);
 
